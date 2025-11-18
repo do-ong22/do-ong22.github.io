@@ -51,14 +51,43 @@ function ProjectModal({ project, isOpen, onClose }) {
             {project.myRole && (
               <section className="modal-role-section">
                 <h3>👤 담당 역할</h3>
-                <p>{project.myRole}</p>
+                {typeof project.myRole === 'object' && !Array.isArray(project.myRole) ? (
+                  <div className="modal-role-categories">
+                    {Object.entries(project.myRole).map(([category, tasks]) => (
+                      <div key={category} className="modal-role-category">
+                        <h4>{category}</h4>
+                        <ul>
+                          {tasks.map((task, index) => (
+                            <li key={index}>{task}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : Array.isArray(project.myRole) ? (
+                  <ul className="modal-role-list">
+                    {project.myRole.map((role, index) => (
+                      <li key={index}>{role}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{project.myRole}</p>
+                )}
               </section>
             )}
 
             {project.stackSummary && (
               <section className="modal-stack-section">
                 <h3>⚡ 기술 스택 요약</h3>
-                <p>{project.stackSummary}</p>
+                {Array.isArray(project.stackSummary) ? (
+                  <ul className="modal-stack-list">
+                    {project.stackSummary.map((summary, index) => (
+                      <li key={index}>{summary}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{project.stackSummary}</p>
+                )}
               </section>
             )}
 

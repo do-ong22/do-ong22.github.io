@@ -376,14 +376,284 @@ nav a:hover::after, nav .nav-link:hover::after {
   .footer-section h3 {
     font-size: 0.85rem; /* 모바일 헤딩 폰트 */
   }
-    
+
   .footer-section p,
   .social-links a,
   .quick-links a {
     font-size: 0.7rem; /* 모바일 링크 폰트 */
   }
-    
+
   .footer-bottom {
     font-size: 0.65rem; /* 모바일 하단 폰트 */
+  }
+}
+
+/* About Section Styles */
+.about-section,
+.experience-section,
+.education-section,
+.competencies-section {
+  max-width: 1000px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #58a6ff, #3b82f6);
+  border-radius: 2px;
+}
+
+.about-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c9d1d9;
+  margin-bottom: 1.5rem;
+}
+
+.about-description:last-child {
+  margin-bottom: 0;
+}
+
+.about-description strong {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+/* Experience Section */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+  box-shadow: 0 5px 20px rgba(88, 166, 255, 0.2);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-header h3 {
+  color: #58a6ff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.experience-period {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.experience-role {
+  color: #c9d1d9;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.experience-details {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-details li {
+  color: #c9d1d9;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.experience-details li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+/* Education Section */
+.education-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.education-item,
+.certification-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.education-item:hover,
+.certification-item:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+  box-shadow: 0 5px 20px rgba(88, 166, 255, 0.2);
+}
+
+.education-item h3,
+.certification-item h3 {
+  color: #58a6ff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p,
+.certification-item p {
+  color: #c9d1d9;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.education-period {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+/* Competencies Section */
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.competency-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.competency-card:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+  box-shadow: 0 5px 20px rgba(88, 166, 255, 0.2);
+}
+
+.competency-card h3 {
+  color: #58a6ff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.competency-subtitle {
+  color: #8b949e;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.competency-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.competency-card li {
+  color: #c9d1d9;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.competency-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+.competency-card li strong {
+  color: #58a6ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section,
+  .experience-section,
+  .education-section,
+  .competencies-section {
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-content,
+  .experience-item,
+  .education-item,
+  .certification-item,
+  .competency-card {
+    padding: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .competencies-grid,
+  .education-content {
+    grid-template-columns: 1fr;
   }
 }

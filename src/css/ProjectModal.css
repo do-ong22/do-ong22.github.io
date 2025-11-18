@@ -469,3 +469,100 @@
     font-size: 1rem;
   }
 }
+
+/* 역할 카테고리별 스타일 */
+.modal-role-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-role-category {
+  background: rgba(13, 110, 253, 0.1);
+  border-left: 4px solid #0d6efd;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.modal-role-category h4 {
+  color: #4fc3f7;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  margin-top: 0;
+}
+
+.modal-role-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-role-category ul li {
+  color: #e0e6ed;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.modal-role-category ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #4fc3f7;
+  font-weight: bold;
+}
+
+/* 리스트 스타일 (배열 형태일 때 사용) */
+.modal-role-list,
+.modal-stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-role-list li,
+.modal-stack-list li {
+  color: #e0e6ed;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-role-list li:last-child,
+.modal-stack-list li:last-child {
+  border-bottom: none;
+}
+
+.modal-role-list li::before,
+.modal-stack-list li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: #4fc3f7;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .modal-role-category {
+    padding: 0.8rem;
+  }
+
+  .modal-role-category h4 {
+    font-size: 1rem;
+  }
+
+  .modal-role-category ul li {
+    font-size: 0.95rem;
+    padding: 0.4rem 0 0.4rem 1.2rem;
+  }
+
+  .modal-role-list li,
+  .modal-stack-list li {
+    font-size: 0.95rem;
+    padding: 0.6rem 0 0.6rem 1.2rem;
+  }
+}
